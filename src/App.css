@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-right: 5px;
+}
+
+.header-section {
+  margin-bottom: 20px;
+}
+
+.heroes {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

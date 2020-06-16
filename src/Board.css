@@ -1,0 +1,100 @@
+.status {
+  font-family: "IM Fell DW Pica SC", serif;
+  padding: 0px;
+  margin: 0px;
+  font-size: 19px;
+  margin-right: 35px;
+  line-height: 1.9;
+}
+
+.board {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  border-radius: 5px;
+  width: 600px;
+  height: 420px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.row {
+  position: relative;
+  border-bottom: 2px solid white;
+  width: 100%;
+  display: flex;
+}
+
+.row:last-child {
+  border-bottom: 0;
+}
+
+.cell {
+  position: relative;
+  background-color: rgba(43, 41, 41, 0.932);
+  /* border-right: 2px solid white; */
+  padding: 10px;
+  width: 100%;
+}
+
+/* .cell:first-child {
+  border-left: 2px solid white;
+} */
+
+.player {
+  width: 100%;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: contain;
+  pointer-events: none;
+}
+
+.avatar {
+  margin-right: 10px;
+  border: 0.5px solid rgb(17, 17, 17);
+  background-color: #3f51b5;
+  margin-top: -5px;
+}
+
+.space-between {
+  line-height: 1.9;
+  padding: 0px;
+}
+
+.container-game {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.player-icon {
+  max-height: 200px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222222);
+  filter: drop-shadow(5px 5px 5px #222222);
+}
+
+.icon-title {
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+.winner-cup {
+  margin-top: 40px;
+}
+
+.uncheck-cell {
+  border-right: 2px solid white;
+}
+
+.uncheck-cell:first-child {
+  border-left: 2px solid white;
+}
+
+.check-cell {
+  border: 4px solid orange;
+}
+
+.check-cell:first-child {
+  border-left: 4px solid orange;
+}
