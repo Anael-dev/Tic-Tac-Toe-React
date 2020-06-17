@@ -1,7 +1,8 @@
 # Tic Tac Toe Game
+
 > Project based on React, built with React Router, Context Api and Session Storage.
 
-![Game Image](public/demo/game-img.png)
+![Game Image](public/game-img.png?raw=true "Game Screen Shot")
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI.
 
