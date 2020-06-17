@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
@@ -11,91 +11,82 @@ import hero4 from "../images/heroes/4.png";
 import hero5 from "../images/heroes/5.png";
 import hero6 from "../images/heroes/6.png";
 
-class LandingPage extends Component {
-  constructor() {
-    super();
-    this.state = {
-      heroes: [hero1, hero2, hero3, hero4, hero5, hero6],
-      player1: "",
-      player2: "",
-    };
-  }
+const LandingPage = (props) => {
+  const [heroes] = useState([
+    hero1,
+    hero2,
+    hero3,
+    hero4,
+    hero5,
+    hero6,
+  ]);
+  const [player1, setPlayer1] = useState("");
+  const [player2, setPlayer2] = useState("");
+  const [gameReady, setGameReady] = useState(false);
 
-  selectPlayer = (hero) => {
-    if (!this.state.player1) {
-      this.setState({ player1: hero });
+  const selectPlayer = (hero) => {
+    if (!player1) {
+      setPlayer1(hero);
     } else {
-      this.setState({ player2: hero });
+      setPlayer2(hero);
+      setGameReady(!gameReady);
     }
   };
 
-  selectAgain = () => {
-    this.setState({ player1: "", player2: "" });
+  const selectAgain = () => {
+    setPlayer1("");
+    setPlayer2("");
+    setGameReady(!gameReady);
   };
 
-  startGame = () => {
-    sessionStorage["player1"] = this.state.player1;
-    sessionStorage["player2"] = this.state.player2;
-    this.props.history.push("/game");
+  const startGame = () => {
+    sessionStorage["player1"] = player1;
+    sessionStorage["player2"] = player2;
+    props.history.push("/game");
   };
-  render() {
-    let noSelect;
-    let selecetQuote;
 
-    if (!this.state.player1) {
-      selecetQuote = <p>Select Hero 1</p>;
-    } else if (!this.state.player2) {
-      selecetQuote = <p>Select Hero 2</p>;
-    }
-
-    let buttonsStart;
-    if (this.state.player1 && this.state.player2) {
-      noSelect = "no-click";
-      selecetQuote = (
-        <p>
-          <span className="under-lined">Are You Ready?</span>
-        </p>
-      );
-      buttonsStart = (
+  return (
+    <div>
+      <div className="flex header-section">
+        {!gameReady ? (
+          <p>Select Hero {!player1 ? "1" : "2"}</p>
+        ) : (
+          <p>
+            <span className="under-lined">Are You Ready?</span>
+          </p>
+        )}
+      </div>
+      <div className="heroes">
+        {heroes.map((x) => {
+          return (
+            <img
+              className={`  ${
+                player1 === x || player2 === x ? "selected" : "hero"
+              } ${gameReady && "no-click"}  `}
+              key={x}
+              src={x}
+              alt={x}
+              onClick={() => selectPlayer(x)}
+            />
+          );
+        })}
+      </div>
+      {gameReady && (
         <ButtonGroup
           className="buttons"
           aria-label="outlined primary button group"
           color="primary"
         >
-          <Button variant="contained" onClick={() => this.startGame()}>
+          <Button variant="contained" onClick={() => startGame()}>
             Start Game
           </Button>
-          <Button variant="outlined" onClick={() => this.selectAgain()}>
+          <Button variant="outlined" onClick={() => selectAgain()}>
             Choose Again
           </Button>
         </ButtonGroup>
-      );
-    }
-
-    let heroes = this.state.heroes.map((x) => {
-      return (
-        <img
-          className={`  ${
-            this.state.player1 === x || this.state.player2 === x
-              ? "selected"
-              : "hero"
-          } ${noSelect}  `}
-          key={x}
-          src={x}
-          alt={x}
-          onClick={() => this.selectPlayer(x)}
-        />
-      );
-    });
-
-    return (
-      <div>
-        <div className="flex header-section">{selecetQuote}</div>
-        <div className="heroes">{heroes}</div>
-        {buttonsStart}
-      </div>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
 
 export default LandingPage;

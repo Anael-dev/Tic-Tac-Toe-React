@@ -23,12 +23,10 @@ const Player = (props) => {
               : `player ${props.playerNum}`}
           </p>
           <img className="player-icon" src={props.icon} alt="icon-player" />
-          {props.winner === props.playerNum ? (
+          {props.winner === props.playerNum && (
             <div className="winner-cup">
               <img src={winCup} alt="win-cup" />
             </div>
-          ) : (
-            ""
           )}
         </div>
       )}

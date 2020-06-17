@@ -2,6 +2,7 @@ import React from "react";
 import Cell from "./Cell";
 
 const Row = (props) => {
+  
   const handleClick = (cellNum) => {
     console.log("triggered");
     props.addPlayerCell(props.rowNum, cellNum);

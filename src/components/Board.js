@@ -179,10 +179,8 @@ const Board = (props) => {
         />
         <div className="board-section">
           <div className="flex">
-            {gameStatus === "It's a draw!" ? (
+            {gameStatus === "It's a draw!" && (
               <h1 className="status">{gameStatus}</h1>
-            ) : (
-              ""
             )}
             <ButtonGroup>
               <Button

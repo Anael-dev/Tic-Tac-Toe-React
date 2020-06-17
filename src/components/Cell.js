@@ -13,13 +13,12 @@ const Cell = (props) => {
         <div
           style={{
             backgroundImage: `url(${
-              props.cellData.player
-                ? sessionStorage[`player${props.cellData.player}`]
-                : ""
+              props.cellData.player &&
+              sessionStorage[`player${props.cellData.player}`]
             })`,
           }}
-          className={`cell ${props.cellData.player ? "player" : ""} ${
-            context.isGame ? "" : "no-click"
+          className={`cell ${props.cellData.player && "player"} ${
+            !context.isGame && "no-click"
           } ${props.cellData.check ? "check-cell" : "uncheck-cell"}`}
           onClick={() => handleClick(context.currPlayer)}
         ></div>
