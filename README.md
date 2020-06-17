@@ -4,7 +4,7 @@
 
  <img src="public/game-img.png" height="200" alt="Screenshot"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI 🔨
+This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI 🔨
 
 ![Tic Tac Toe Game Demo](public/demo.gif)
 
