@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 
-import logo from "./logo/logo.png";
+import logo from "../images/logo.png";
 import Board from "./Board";
 import LandingPage from "./LandingPage";
 
-import "./MainPage.css";
+import "../css/MainPage.css";
 
 class MainPage extends Component {
   constructor() {

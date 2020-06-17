@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import Row from "./Row";
 import Player from "./Player";
-
-import MyContext from "./MyContext";
+import MyContext from "../MyContext";
 
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
-import "./Board.css";
+import "../css/Board.css";
 
 class Board extends Component {
   constructor() {

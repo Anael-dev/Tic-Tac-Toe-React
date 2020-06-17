@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MyContext from "./MyContext";
+import MyContext from "../MyContext";
 
 class Cell extends Component {
   constructor() {

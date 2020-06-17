@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 
-import "./LandingPage.css";
+import "../css/LandingPage.css";
 
-import hero1 from "./heroes/1.png";
-import hero2 from "./heroes/2.png";
-import hero3 from "./heroes/3.png";
-import hero4 from "./heroes/4.png";
-import hero5 from "./heroes/5.png";
-import hero6 from "./heroes/6.png";
+import hero1 from "../images/heroes/1.png";
+import hero2 from "../images/heroes/2.png";
+import hero3 from "../images/heroes/3.png";
+import hero4 from "../images/heroes/4.png";
+import hero5 from "../images/heroes/5.png";
+import hero6 from "../images/heroes/6.png";
 
 class LandingPage extends Component {
   constructor() {

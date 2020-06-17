@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import MyContext from "./MyContext";
+import MyContext from "../MyContext";
 
-import winCup from "./winner/winner1.png";
+import winCup from "../images/winner.png";
 
 class Player extends Component {
   constructor() {
