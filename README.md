@@ -2,9 +2,9 @@
 
 > Project based on React, built with React Router, Context Api and Session Storage.
 
-![Game Image](public/game-img.png?raw=true "Game Screen Shot")
+ <img src="public/game-img.png" height="200" alt="Screenshot"/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI 🔨
 
 ![Tic Tac Toe Game Demo](public/demo.gif)
 
