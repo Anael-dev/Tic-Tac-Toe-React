@@ -1,30 +1,28 @@
-import React, { Component } from "react";
+import React from "react";
 import Cell from "./Cell";
 
-class Row extends Component {
-  constructor() {
-    super();
-  }
-
-  handleClick = (cellNum) => {
-    this.props.addPlayerCell(this.props.rowNum, cellNum);
+const Row = (props) => {
+  const handleClick = (cellNum) => {
+    console.log("triggered");
+    props.addPlayerCell(props.rowNum, cellNum);
   };
 
-  render() {
-    let cells = this.props.rowData.map((x, i) => {
-      return (
-        <Cell
-          key={i}
-          cellNum={x.cell}
-          cellData={x}
-          clickCallback={(cellNum, playerNum) =>
-            this.handleClick(cellNum, playerNum)
-          }
-        />
-      );
-    });
-    return <div className="row">{cells}</div>;
-  }
-}
+  return (
+    <div className="row">
+      {props.rowData.map((x, i) => {
+        return (
+          <Cell
+            key={i}
+            cellNum={x.cell}
+            cellData={x}
+            clickCallback={(cellNum, playerNum) =>
+              handleClick(cellNum, playerNum)
+            }
+          />
+        );
+      })}
+    </div>
+  );
+};
 
 export default Row;

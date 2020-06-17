@@ -1,53 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import MyContext from "../MyContext";
 
 import winCup from "../images/winner.png";
 
-class Player extends Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-    let winImg;
-    let title;
-    if (this.props.winner === this.props.playerNum) {
-      winImg = (
-        <div className="winner-cup">
-          <img src={winCup} alt="win-cup" />
+const Player = (props) => {
+  return (
+    <MyContext.Consumer>
+      {(context) => (
+        <div>
+          <p
+            className="icon-title"
+            style={{
+              backgroundColor: `${
+                context.currPlayer === props.playerNum
+                  ? "orange"
+                  : "rgb(245, 242, 238)"
+              }`,
+            }}
+          >
+            {props.winner === props.playerNum
+              ? "winner!"
+              : `player ${props.playerNum}`}
+          </p>
+          <img className="player-icon" src={props.icon} alt="icon-player" />
+          {props.winner === props.playerNum ? (
+            <div className="winner-cup">
+              <img src={winCup} alt="win-cup" />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-      );
-      title = "winner!";
-    } else {
-      title = `player ${this.props.playerNum}`;
-    }
-    return (
-      <MyContext.Consumer>
-        {(context) => (
-          <div>
-            <p
-              className="icon-title"
-              style={{
-                backgroundColor: `${
-                  context.currPlayer === this.props.playerNum
-                    ? "orange"
-                    : "rgb(245, 242, 238)"
-                }`,
-              }}
-            >
-              {title}
-            </p>
-            <img
-              className="player-icon"
-              src={this.props.icon}
-              alt="icon-player"
-            />
-            {winImg}
-          </div>
-        )}
-      </MyContext.Consumer>
-    );
-  }
-}
+      )}
+    </MyContext.Consumer>
+  );
+};
 
 export default Player;
