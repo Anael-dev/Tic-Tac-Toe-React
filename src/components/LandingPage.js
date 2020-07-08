@@ -12,14 +12,7 @@ import hero5 from "../images/heroes/5.png";
 import hero6 from "../images/heroes/6.png";
 
 const LandingPage = (props) => {
-  const [heroes] = useState([
-    hero1,
-    hero2,
-    hero3,
-    hero4,
-    hero5,
-    hero6,
-  ]);
+  const [heroes] = useState([hero1, hero2, hero3, hero4, hero5, hero6]);
   const [player1, setPlayer1] = useState("");
   const [player2, setPlayer2] = useState("");
   const [gameReady, setGameReady] = useState(false);
@@ -46,22 +39,20 @@ const LandingPage = (props) => {
   };
 
   return (
-    <div>
-      <div className="flex header-section">
-        {!gameReady ? (
-          <p>Select Hero {!player1 ? "1" : "2"}</p>
-        ) : (
-          <p>
-            <span className="under-lined">Are You Ready?</span>
-          </p>
-        )}
-      </div>
-      <div className="heroes">
+    <div className='container container-landing-page'>
+      {!gameReady ? (
+        <h2 className='game-title'>Select Hero {!player1 ? "1" : "2"}</h2>
+      ) : (
+        <h2 className='game-title under-lined'>Are You Ready?</h2>
+      )}
+      <div className='heroes-container'>
         {heroes.map((x) => {
           return (
             <img
               className={`  ${
-                player1 === x || player2 === x ? "selected" : "hero"
+                player1 === x || player2 === x
+                  ? "hero selected"
+                  : "hero not-selected"
               } ${gameReady && "no-click"}  `}
               key={x}
               src={x}
@@ -72,18 +63,29 @@ const LandingPage = (props) => {
         })}
       </div>
       {gameReady && (
-        <ButtonGroup
-          className="buttons"
-          aria-label="outlined primary button group"
-          color="primary"
-        >
-          <Button variant="contained" onClick={() => startGame()}>
-            Start Game
-          </Button>
-          <Button variant="outlined" onClick={() => selectAgain()}>
-            Choose Again
-          </Button>
-        </ButtonGroup>
+          <div className='buttons game-buttons'>
+            <input
+              type='button'
+              value='Start Game'
+              onClick={() => startGame()}
+            />
+            <input
+              type='button'
+              value='Choose Again'
+              onClick={() => selectAgain()}
+            />
+          </div>
+        // <ButtonGroup
+        //   className='buttons'
+        //   aria-label='outlined primary button group'
+        //   color='primary'>
+        //   <Button variant='contained' onClick={() => startGame()}>
+        //     Start Game
+        //   </Button>
+        //   <Button variant='outlined' onClick={() => selectAgain()}>
+        //     Choose Again
+        //   </Button>
+        // </ButtonGroup>
       )}
     </div>
   );

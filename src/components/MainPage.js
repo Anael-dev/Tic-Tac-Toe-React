@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import logo from "../images/logo.png";
@@ -9,17 +9,19 @@ import "../css/MainPage.css";
 
 const MainPage = () => {
   return (
-    <div>
-      <div className="container">
-        <img src={logo} className="logo" alt="logo-game" />
-        <h2>Tic Tac Toe</h2>
-      </div>
+    <>
+      <header>
+        <div className='container container-header'>
+          <h1 className='header-title'>Tic Tac Toe</h1>
+          <img src={logo} className='header-logo' alt='logo-game' />
+        </div>
+      </header>
       <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route path="/game" component={Board} />
-        <Route path="/main" component={LandingPage} />
+        <Route exact path='/' component={LandingPage} />
+        <Route path='/game' component={Board} />
+        <Route path='/main' component={LandingPage} />
       </Switch>
-    </div>
+    </>
   );
 };
 

@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -13,35 +13,67 @@ html {
     rgba(238, 174, 202, 1) 0%,
     rgba(148, 187, 233, 1) 100%
   );
+  font-size: 75%;
 }
 
-.App {
-  text-align: center;
+/*  Fonts
+-----
+font-family: 'Lora', serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+body {
+  height: 100vh;
+  border: 3px solid lawngreen;
+  margin: 0;
+  font-family: "Lora", serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h2,
+h3 {
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0;
 }
 
 h1 {
-  font-weight: 400;
+  font-family: "Zilla Slab", serif;
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 0;
 }
 
-.no-click {
-  pointer-events: none;
+input[type="button"],
+input[type="submit"] {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: "Lora", serif;
+  background-color: #4caf4fc9;
+  border: none;
+  color: white;
+  padding: 0.3em 0.8em;
+  text-decoration: none;
+  margin: 0.3em;
+  cursor: pointer;
 }
 
-.flex {
+.buttons {
+  border: 3px solid rebeccapurple;
   display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-right: 5px;
+  justify-content: space-between;
 }
 
-.header-section {
-  margin-bottom: 20px;
-}
-
-.heroes {
-  margin-top: 10px;
-  margin-bottom: 25px;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+.container {
+  border: 3px solid green;
+  width: 95%;
+  max-width: 900px;
+  margin: 0 auto;
 }

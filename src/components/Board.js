@@ -28,7 +28,7 @@ const Board = (props) => {
     }
   };
 
-  const addPlayerCell =  (rowNum, cellNum) => {
+  const addPlayerCell = (rowNum, cellNum) => {
     const allRows = rows;
     const row = allRows[rowNum];
     const cell = row.find((x) => x.cell === cellNum);
@@ -169,45 +169,41 @@ const Board = (props) => {
       value={{
         currPlayer: currPlayer,
         isGame: isGame,
-      }}
-    >
-      <div className="container-game">
-        <Player
-          playerNum={1}
-          icon={sessionStorage["player1"]}
-          winner={winner}
-        />
-        <div className="board-section">
-          <div className="flex">
-            {gameStatus === "It's a draw!" && (
-              <h1 className="status">{gameStatus}</h1>
-            )}
-            <ButtonGroup>
-              <Button
-                size="medium"
-                onClick={() => restartGame()}
-                variant="contained"
-                color="primary"
-              >
-                {gameStatus ? "New Game" : "Reset Game"}
-              </Button>
-              <Button
-                color="primary"
-                size="medium"
-                variant="outlined"
-                onClick={() => backToMain()}
-              >
-                New Players
-              </Button>
-            </ButtonGroup>
-          </div>
-          <div className="board">{renderRows()} </div>
+      }}>
+      <div className='container container-game'>
+        <div className='buttons board-buttons'>
+          <input
+            type='button'
+            value={gameStatus ? "New Game" : "Reset Game"}
+            onClick={() => restartGame()}
+          />
+
+          <input
+            type='button'
+            value='New Players'
+            onClick={() => backToMain()}
+          />
         </div>
-        <Player
-          playerNum={2}
-          icon={sessionStorage["player2"]}
-          winner={winner}
-        />
+        <div className='container-players'>
+          <Player
+            className='player'
+            playerNum={1}
+            icon={sessionStorage["player1"]}
+            winner={winner}
+          />
+          <div className='game-status'>
+            {gameStatus === "It's a draw!" && (
+              <h2 className='status'>{gameStatus}</h2>
+            )}
+          </div>
+          <div className='board'>{renderRows()} </div>
+          <Player
+            className='player'
+            playerNum={2}
+            icon={sessionStorage["player2"]}
+            winner={winner}
+          />
+        </div>
       </div>
     </MyContext.Provider>
   );

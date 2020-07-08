@@ -1,0 +1,36 @@
+.container-player {
+  margin: 0.3em;
+}
+.player-title {
+  padding: 0.5em;
+  font-size: 0.8em;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid white;
+}
+
+.icon {
+  padding: 0.3em;
+  max-height: 60px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 40%;
+}
+
+.player-icon {
+  -webkit-filter: drop-shadow(5px 5px 5px #222222);
+  filter: drop-shadow(5px 5px 5px #222222);
+}
+.icon-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 750px) {
+  .icon-section {
+    flex-direction: column;
+  }
+  .icon {
+    max-height: 120px;
+  }
+}

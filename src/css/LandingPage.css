@@ -1,33 +1,78 @@
 @import url("https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica+SC&display=swap");
-p {
-  font-family: "IM Fell DW Pica SC", serif;
-  font-size: 23px;
-  padding: 5px;
+
+.container-landing-page {
+  display: flex;
+  flex-direction: column;
+}
+.game-title {
+  padding: 0.2em;
+  font-size: 1.8rem;
+  text-align: center;
   animation: moveInRight 0.8s ease-out;
+}
+.under-lined {
+  text-decoration: underline;
+}
+p {
+  padding: 5px;
+}
+
+.heroes-container {
+  border: 3px solid gold;
+  margin-bottom: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero {
+  margin: 1em;
+  padding: 1em;
+  max-height: 150px;
   outline: 2px solid transparent;
   transition: all 0.5s ease-in-out;
   animation: moveInBottom 0.8s ease-out;
 }
 
-.hero:hover {
-  outline: 2px solid rgba(216, 239, 243, 0.623);
+.not-selected:hover,
+.not-selected:focus {
+  outline: 2px solid rgba(216, 239, 243, 0.781);
   transform: scale(1.05);
   opacity: 0.8;
   cursor: pointer;
 }
 
+.no-click,
 .selected {
-  outline: 2px solid rgba(58, 133, 231, 0.815);
-  transform: scale(1.08);
-  opacity: 1;
-  cursor: pointer;
+  pointer-events: none;
 }
 
-.under-lined {
-  text-decoration: underline;
+.selected {
+  outline: 2px solid rgba(58, 133, 231, 0.815);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.game-buttons {
+  margin-bottom: 0.2em;
+  order: -1;
+}
+
+@media (min-width: 400px) {
+  .heroes-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 500px) {
+  .hero {
+    max-height: 120px;
+  }
+  .heroes-container {
+    margin-top: 3em;
+  }
 }
 
 @keyframes moveInBottom {
