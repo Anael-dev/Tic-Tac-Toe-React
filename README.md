@@ -2,11 +2,11 @@
 
 > Project based on React with hooks, built with React Router, Context Api and Session Storage.
 
- <img src="public/game-img.png" height="200" alt="Screenshot"/>
+ <img src="public/large_demo.png" height="200" alt="large_Screenshot_demo"/>
 
-This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and constructed with Material-UI 🔨
+ <img src="images/small_demo.png" height="500" alt="small_Screenshot_demo"/>
 
-![Tic Tac Toe Game Demo](public/demo.gif)
+This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 🔨
 
 ## Available Scripts
 
