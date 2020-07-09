@@ -1,30 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300;700&display=swap");
-/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap");
+
+/* Global Styles */
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background-image: url("../images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-size: 75%;
 }
 
-/*  Fonts
------
-font-family: 'Lora', serif;
-font-family: 'Ubuntu', sans-serif;
-*/
-
 body {
   height: 100vh;
-  border: 3px solid lawngreen;
   margin: 0;
   font-family: "Lora", serif;
   font-size: 1.4rem;
@@ -45,14 +38,12 @@ h3 {
 }
 
 h1 {
-  font-family: "Zilla Slab", serif;
-  font-weight: 700;
-  font-size: 3rem;
+  font-family: "Special Elite", cursive;
+  font-size: 2.8rem;
   margin: 0;
 }
 
-input[type="button"],
-input[type="submit"] {
+input[type="button"] {
   font-size: 1.3rem;
   font-weight: 700;
   font-family: "Lora", serif;
@@ -65,14 +56,12 @@ input[type="submit"] {
   cursor: pointer;
 }
 
-.buttons {
-  border: 3px solid rebeccapurple;
-  display: flex;
-  justify-content: space-between;
+input[type="button"]:hover,
+input[type="button"]:focus {
+  text-decoration: underline;
 }
 
 .container {
-  border: 3px solid green;
   width: 95%;
   max-width: 900px;
   margin: 0 auto;

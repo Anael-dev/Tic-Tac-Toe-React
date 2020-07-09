@@ -4,25 +4,13 @@
   display: flex;
   flex-direction: column;
 }
-.game-title {
-  padding: 0.2em;
-  font-size: 1.8rem;
-  text-align: center;
-  animation: moveInRight 0.8s ease-out;
-}
-.under-lined {
-  text-decoration: underline;
-}
-p {
-  padding: 5px;
-}
 
 .heroes-container {
-  border: 3px solid gold;
   margin-bottom: 0.2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .hero {
@@ -32,6 +20,25 @@ p {
   outline: 2px solid transparent;
   transition: all 0.5s ease-in-out;
   animation: moveInBottom 0.8s ease-out;
+}
+
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.2em;
+  order: -1;
+}
+
+.game-title {
+  margin-top: 2em;
+  padding: 0.4em 0.2em;
+  font-size: 2rem;
+  text-align: center;
+  animation: moveInRight 0.8s ease-out;
+}
+
+.under-lined {
+  text-decoration: underline;
 }
 
 .not-selected:hover,
@@ -48,30 +55,47 @@ p {
 }
 
 .selected {
-  outline: 2px solid rgba(58, 133, 231, 0.815);
+  outline: 2px solid whitesmoke;
   transform: scale(1.05);
   opacity: 1;
-}
-
-.game-buttons {
-  margin-bottom: 0.2em;
-  order: -1;
 }
 
 @media (min-width: 400px) {
   .heroes-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
   }
 }
 
 @media (min-width: 500px) {
   .hero {
-    max-height: 120px;
+    max-height: 130px;
   }
   .heroes-container {
     margin-top: 3em;
+  }
+}
+
+@media (min-width: 630px) {
+  .heroes-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 930px) {
+  .heroes-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding-top: 1em;
+  }
+
+  .game-buttons {
+    order: 99;
+    padding-top: 2em;
   }
 }
 

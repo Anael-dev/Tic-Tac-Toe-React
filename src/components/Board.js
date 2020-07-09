@@ -3,9 +3,6 @@ import Row from "./Row";
 import Player from "./Player";
 import MyContext from "../MyContext";
 
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
-
 import "../css/Board.css";
 
 const Board = (props) => {
@@ -111,6 +108,9 @@ const Board = (props) => {
       stopGame();
       setGameStatus("It's a draw!");
       setWinner("");
+      setTimeout(() => {
+        alert("It's a draw!");
+      }, 0.2);
       return;
     }
 
@@ -170,41 +170,57 @@ const Board = (props) => {
         currPlayer: currPlayer,
         isGame: isGame,
       }}>
-      <div className='container container-game'>
-        <div className='buttons board-buttons'>
-          <input
-            type='button'
-            value={gameStatus ? "New Game" : "Reset Game"}
-            onClick={() => restartGame()}
-          />
+      <div className='board-wrapper'>
+        <div className='container container-game'>
+          <div className='board-buttons'>
+            <input
+              type='button'
+              value={gameStatus ? "New Game" : "Reset Game"}
+              onClick={() => restartGame()}
+            />
 
-          <input
-            type='button'
-            value='New Players'
-            onClick={() => backToMain()}
-          />
-        </div>
-        <div className='container-players'>
-          <Player
-            className='player'
-            playerNum={1}
-            icon={sessionStorage["player1"]}
-            winner={winner}
-          />
-          <div className='game-status'>
-            {gameStatus === "It's a draw!" && (
-              <h2 className='status'>{gameStatus}</h2>
-            )}
+            <input
+              type='button'
+              value='New Players'
+              onClick={() => backToMain()}
+            />
           </div>
-          <div className='board'>{renderRows()} </div>
-          <Player
-            className='player'
-            playerNum={2}
-            icon={sessionStorage["player2"]}
-            winner={winner}
-          />
+
+          <div className='container-board-players'>
+            <Player
+              className='player'
+              playerNum={1}
+              icon={sessionStorage["player1"]}
+              winner={winner}
+            />
+            <div className='board'>{renderRows()} </div>
+            <Player
+              className='player'
+              playerNum={2}
+              icon={sessionStorage["player2"]}
+              winner={winner}
+            />
+          </div>
         </div>
       </div>
+      <footer>
+        <span className='footer-span'>Created by @Anael-dev</span>
+        <a
+          className='footer-link'
+          href='https://www.linkedin.com/in/anael-mashinsky/'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <i className='fab fa-linkedin-in'></i>
+        </a>
+        <br />
+        <a
+          className='footer-link'
+          href='https://github.com/Anael-dev'
+          target='_blank'
+          rel='noopener noreferrer'>
+          <i className='fab fa-github'></i>
+        </a>
+      </footer>
     </MyContext.Provider>
   );
 };

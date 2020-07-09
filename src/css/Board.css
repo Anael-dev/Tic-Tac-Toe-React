@@ -1,31 +1,28 @@
+.board-wrapper {
+  height: 100%;
+}
 .container-game {
   display: flex;
   flex-direction: column;
 }
 
-.board-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.container-players {
+.container-board-players {
   padding: 0 1em;
   display: flex;
   justify-content: space-between;
 }
-.status {
-  font-family: "Zilla Slab", serif;
-  font-size: 1em;
-  font-weight: 700;
-  line-height: 3;
-  text-decoration: underline;
+
+.board-buttons {
+  display: flex;
+  justify-content: center;
 }
 
+/* //Board// */
 .board {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   border-radius: 5px;
-  max-width: 95%;
+  max-width: 90%;
   min-height: 270px;
   margin: 0 auto;
   display: flex;
@@ -47,21 +44,17 @@
 .cell {
   position: relative;
   background-color: rgba(43, 41, 41, 0.932);
-  /* border-right: 2px solid white; */
   padding: 2em;
   width: 100%;
 }
 
-/* .cell:first-child {
-  border-left: 2px solid white;
-} */
-
+/* Player Background img */
 .player {
   width: 100%;
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: contain;
   pointer-events: none;
+  background-size: 3em;
 }
 
 .uncheck-cell {
@@ -73,36 +66,64 @@
 }
 
 .check-cell {
-  border: 4px solid orange;
+  border: 4px solid rgb(243, 165, 19);
 }
 
 .check-cell:first-child {
-  border-left: 4px solid orange;
+  border-left: 4px solid rgb(243, 165, 19);
 }
 
-@media (max-width: 750px) {
+footer {
+  padding: 0.5em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: "Lora", serif;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Footer */
+.footer-span {
+  font-size: 0.8em;
+  color: white;
+}
+.footer-link {
+  font-size: 0.8em;
+  text-decoration: none;
+  color: white;
+  margin-left: 1em;
+}
+
+.footer-link:focus,
+.footer-link:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 749px) {
   .board {
     order: 99;
   }
-  .container-players {
+  .container-board-players {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 }
 
-@media (min-width: 751px) {
-  .board {
-    min-width: 500px;
-    min-height: 320px;
-  }
-
-  .game-status {
-    order: -1;
+@media (min-width: 750px) {
+  .container-board-players {
+    padding-bottom: 9em;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 800px) {
+  .container-board-players {
+    padding-bottom: 0;
+  }
   .board {
     min-width: 600px;
     min-height: 420px;

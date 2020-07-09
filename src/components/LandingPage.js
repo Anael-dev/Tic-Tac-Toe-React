@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
 
 import "../css/LandingPage.css";
 
@@ -63,29 +61,14 @@ const LandingPage = (props) => {
         })}
       </div>
       {gameReady && (
-          <div className='buttons game-buttons'>
-            <input
-              type='button'
-              value='Start Game'
-              onClick={() => startGame()}
-            />
-            <input
-              type='button'
-              value='Choose Again'
-              onClick={() => selectAgain()}
-            />
-          </div>
-        // <ButtonGroup
-        //   className='buttons'
-        //   aria-label='outlined primary button group'
-        //   color='primary'>
-        //   <Button variant='contained' onClick={() => startGame()}>
-        //     Start Game
-        //   </Button>
-        //   <Button variant='outlined' onClick={() => selectAgain()}>
-        //     Choose Again
-        //   </Button>
-        // </ButtonGroup>
+        <div className='game-buttons'>
+          <input type='button' value='Start Game' onClick={() => startGame()} />
+          <input
+            type='button'
+            value='Choose Again'
+            onClick={() => selectAgain()}
+          />
+        </div>
       )}
     </div>
   );

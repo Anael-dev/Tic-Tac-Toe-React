@@ -1,7 +1,10 @@
 .container-player {
   margin: 0.3em;
+  animation: moveInLeft 0.8s ease-out;
 }
 .player-title {
+  font-family: "Special Elite", cursive;
+  display: inline-block;
   padding: 0.5em;
   font-size: 0.8em;
   text-align: center;
@@ -14,7 +17,6 @@
   max-height: 60px;
   object-fit: contain;
   object-position: center;
-  border-radius: 40%;
 }
 
 .player-icon {
@@ -32,5 +34,19 @@
   }
   .icon {
     max-height: 120px;
+  }
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-5rem);
+  }
+  80% {
+    transform: translateX(0.3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
   }
 }
