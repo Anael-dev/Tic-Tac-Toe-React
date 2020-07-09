@@ -30,6 +30,7 @@
 }
 
 .game-title {
+  font-family: "IM Fell DW Pica SC", cursive;
   margin-top: 2em;
   padding: 0.4em 0.2em;
   font-size: 2rem;

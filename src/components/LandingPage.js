@@ -39,7 +39,7 @@ const LandingPage = (props) => {
   return (
     <div className='container container-landing-page'>
       {!gameReady ? (
-        <h2 className='game-title'>Select Hero {!player1 ? "1" : "2"}</h2>
+        <h2 className='game-title'>Select Hero No. {!player1 ? "1" : "2"}</h2>
       ) : (
         <h2 className='game-title under-lined'>Are You Ready?</h2>
       )}
