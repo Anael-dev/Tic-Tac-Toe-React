@@ -15,6 +15,7 @@
 .board-buttons {
   display: flex;
   justify-content: center;
+  margin-bottom: .8em;
 }
 
 /* //Board// */
@@ -127,5 +128,8 @@ footer {
   .board {
     min-width: 600px;
     min-height: 420px;
+  }
+  .board-buttons {
+    margin-bottom: 0;
   }
 }
