@@ -4,8 +4,6 @@
 
  <img src="public/large_demo.png" height="300" alt="large_Screenshot_demo"/>
 
- <img src="public/small_demo.png" height="400" alt="small_Screenshot_demo"/>
-
 This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 🔨
 
 ## Available Scripts
