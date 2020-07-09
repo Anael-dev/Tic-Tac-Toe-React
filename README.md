@@ -2,9 +2,9 @@
 
 > Project based on React with hooks, built with React Router, Context Api and Session Storage.
 
- <img src="public/large_demo.png" height="250" alt="large_Screenshot_demo"/>
+ <img src="public/large_demo.png" height="200" alt="large_Screenshot_demo"/>
 
- <img src="public/small_demo.png" height="550" alt="small_Screenshot_demo"/>
+ <img src="public/small_demo.png" height="400" alt="small_Screenshot_demo"/>
 
 This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 🔨
 
