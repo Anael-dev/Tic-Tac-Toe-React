@@ -1,6 +1,6 @@
 # Tic Tac Toe Game
 
-> Project based on React with hooks, built with React Router, Context Api and Session Storage.
+> Project based on React hooks, built with React Router, Context Api and Session Storage.
 
  <img src="public/large_demo.png" height="300" alt="large_Screenshot_demo"/>
 
