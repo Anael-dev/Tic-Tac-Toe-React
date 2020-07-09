@@ -6,7 +6,7 @@
 
 This Game was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) 🔨
 
-App reference:
+App reference link:
 https://tic-tac-toe-heroes.netlify.app/
 
 ## Available Scripts
